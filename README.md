@@ -1,9 +1,9 @@
-# Building a SOC + Honeynet in Azure (Live Traffic)
+# Azure live Honeynet with Live Traffic and Sentinel (SIEM) Geolocation
 ![Cloud Honeynet / SOC](https://i.imgur.com/ZWxe03e.jpg)
 
 ## Introduction
 
-In this project, I build a mini honeynet in Azure and ingest log sources from various resources into a Log Analytics workspace, which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 24 hours, apply some security controls to harden the environment, measure metrics for another 24 hours, then show the results below. The metrics we will show are:
+In this undertaking, I have constructed a compact honeynet within the Azure platform and established a mechanism to gather log data from diverse sources, channeling them into a Log Analytics workspace. This workspace is subsequently employed by Microsoft Sentinel to construct comprehensive attack maps, initiate alert notifications, and generate incident reports. To evaluate the security of the vulnerable environment, I conducted a 24-hour assessment of key security metrics. Following this, I implemented several security controls to fortify the environment and proceeded to measure the metrics for an additional 24 hours. The ensuing section presents the outcomes, showcasing the following metrics:
 
 - SecurityEvent (Windows Event Logs)
 - Syslog (Linux Event Logs)
