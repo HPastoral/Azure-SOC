@@ -32,44 +32,46 @@ For the "BEFORE" metrics, all resources were originally deployed, exposed to the
 For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
 
 ## Attack Maps Before Hardening / Security Controls
-![NSG Allowed Inbound Malicious Flows](https://i.imgur.com/1qvswSX.png)<br>
-![Linux Syslog Auth Failures](https://i.imgur.com/G1YgZt6.png)<br>
-![Windows RDP/SMB Auth Failures](https://i.imgur.com/ESr9Dlv.png)<br>
+![NSGH MAP1](https://github.com/HPastoral/Azure-SOC/assets/135756003/3030a7dd-d482-4651-99cd-0b891214ee1c)<br>
+![Linux MAP1](https://github.com/HPastoral/Azure-SOC/assets/135756003/8f25d594-7502-4766-b082-25106e2f35f3)
+![MSSQL MAP1](https://github.com/HPastoral/Azure-SOC/assets/135756003/17924a2a-d6cb-419a-9771-d359814b8ee8)
+![NSGH MAP1](https://github.com/HPastoral/Azure-SOC/assets/135756003/cae070d0-1118-4c03-8ce2-5f8079bd684b)
 
 ## Metrics Before Hardening / Security Controls
 
 The following table shows the metrics we measured in our insecure environment for 24 hours:
-Start Time 2023-03-15 17:04:29
-Stop Time 2023-03-16 17:04:29
+Start Time 2023-06-17 16:10:23
+Stop Time 2023-06-17 16:11:08
 
-| Metric                   | Count
-| ------------------------ | -----
-| SecurityEvent            | 19470
-| Syslog                   | 3028
-| SecurityAlert            | 10
-| SecurityIncident         | 348
-| AzureNetworkAnalytics_CL | 843
-
+| Metric                             | Count
+| ---------------------------------- | -----
+| SecurityEvent                      | 4750
+| Syslog                             | 5113
+| SecurityAlert                      | 0
+| SecurityIncident                   | 355
+| NSG Inbound Malicious Flows Allowed| 1653
+| NSG Inbound Malicious Flows Blocked| 387
 ## Attack Maps Before Hardening / Security Controls
+```Some of the map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
 
-```All map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
+![Linux MAP2](https://github.com/HPastoral/Azure-SOC/assets/135756003/7ff45c71-f69d-40fd-890e-9966653d42a5)<BR>
 
 ## Metrics After Hardening / Security Controls
 
 The following table shows the metrics we measured in our environment for another 24 hours, but after we have applied security controls:
-Start Time 2023-03-18 15:37
-Stop Time	2023-03-19 15:37
+Start Time 2023-06-19 20:33:22
+Stop Time	2023-06-19 20:34:00
 
-| Metric                   | Count
-| ------------------------ | -----
-| SecurityEvent            | 8778
-| Syslog                   | 25
-| SecurityAlert            | 0
-| SecurityIncident         | 0
-| AzureNetworkAnalytics_CL | 0
+| Metric                             | Count
+| ---------------------------------- | -----
+| SecurityEvent                      | 691
+| Syslog                             | 25
+| SecurityAlert                      | 0
+| SecurityIncident                   | 0
+| NSG Inbound Malicious Flows Allowed| 0
+| NSG Inbound Malicious Flows Blocked| 0
 
 ## Conclusion
 
-In this project, a mini honeynet was constructed in Microsoft Azure and log sources were integrated into a Log Analytics workspace. Microsoft Sentinel was employed to trigger alerts and create incidents based on the ingested logs. Additionally, metrics were measured in the insecure environment before security controls were applied, and then again after implementing security measures. It is noteworthy that the number of security events and incidents were drastically reduced after the security controls were applied, demonstrating their effectiveness.
+This project involved the construction of a compact honeynet within the Microsoft Azure platform, with the integration of log sources into a Log Analytics workspace. Microsoft Sentinel was utilized to activate alerts and generate incidents by leveraging the ingested logs. Furthermore, security metrics were initially measured in the vulnerable environment before implementing security controls, and then re-evaluated after the implementation. Notably, the application of security measures resulted in a significant reduction in the number of security events and incidents, effectively showcasing their efficacy.
 
-It is worth noting that if the resources within the network were heavily utilized by regular users, it is likely that more security events and alerts may have been generated within the 24-hour period following the implementation of the security controls.
