@@ -52,7 +52,7 @@ Stop Time 2023-06-17 16:11:08
 | SecurityIncident                   | 355
 | NSG Inbound Malicious Flows Allowed| 1653
 | NSG Inbound Malicious Flows Blocked| 387
-## Attack Maps Before Hardening / Security Controls
+## Attack Maps After Hardening / Security Controls
 ```Some of the map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
 
 ![Linux MAP2](https://github.com/HPastoral/Azure-SOC/assets/135756003/7ff45c71-f69d-40fd-890e-9966653d42a5)<BR>
