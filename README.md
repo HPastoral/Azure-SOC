@@ -1,5 +1,6 @@
 # Azure live Honeynet with Live Traffic and Sentinel (SIEM) Geolocation
-![Cloud Honeynet / SOC](https://i.imgur.com/ZWxe03e.jpg)
+
+![Azure](https://github.com/HPastoral/Azure-SOC/assets/135756003/b5febe6b-38c9-430c-ab1c-318502cb14c7)
 
 ## Introduction
 
